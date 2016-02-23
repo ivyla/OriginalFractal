@@ -23,26 +23,33 @@ public void fractal(float x, int y, float siz){
 
 int r, g, b;
 r = (int)(Math.random()*255) + 40;
-g = (int)(Math.random()*255)- 80;
+g = (int)(Math.random()*255) +20;
 b = (int)(Math.random()*255) -20;
   stroke(r,g,b);
 if(siz <= 10){
   //fill(255,0,0);
   
   ellipse(x,y, 100, 200);
-  ellipse(x-100,y, 200, 200);
-  ellipse(x+100,y+100, 300, 200);
-  ellipse(x,y+150, 150, 200);
-  ellipse(x,y-200, 150, 200);
+  
+  
+  ellipse(x+100,y, 300, 200);
+  ellipse(x-100,y, 300, 200);
+  
+  // Top and Bottom
+  ellipse(x,y+150, 120, 200);
+  ellipse(x,y-150, 120, 200);
+  ellipse(x,y+150, 60, 100);
+  ellipse(x,y-150, 60, 100);
+
   
 } else{
  noFill();
 // fill(0,255,0);
-ellipse(x + siz/2, y, 200, siz);
+ellipse(250, y, 200, siz);
 //ellipse(x + siz/2, y - siz*2, 150, siz / 3);
 fractal(x + siz/2, y, siz/4);
-fractal(x - siz/2, y, siz/8);
-fractal(x + siz/3, y, siz/3);
+fractal(x - siz/2, y, siz/4);
+fractal(x + siz/4, y, siz/3);
 
 }
 
