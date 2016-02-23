@@ -22,7 +22,7 @@ public void draw(){
 public void fractal(float x, int y, float siz){
 
 int r, g, b;
-r = (int)(Math.random()*255) - 40;
+r = (int)(Math.random()*255) + 40;
 g = (int)(Math.random()*255)- 80;
 b = (int)(Math.random()*255) -20;
   stroke(r,g,b);
@@ -30,6 +30,11 @@ if(siz <= 10){
   //fill(255,0,0);
   
   ellipse(x,y, 100, 200);
+  ellipse(x-100,y, 200, 200);
+  ellipse(x+100,y+100, 300, 200);
+  ellipse(x,y+150, 150, 200);
+  ellipse(x,y-200, 150, 200);
+  
 } else{
  noFill();
 // fill(0,255,0);
@@ -65,6 +70,3 @@ fractal(x + siz/3, y, siz/3);
 //b = (int)(Math.random()*255) -100;
 //  }
 // 
-
-
-
